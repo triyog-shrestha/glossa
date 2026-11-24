@@ -29,7 +29,7 @@ class _LanguageSelectionScreenState
   void initState() {
     super.initState();
     final userLang = ref.read(gameStateProvider).user.languageId;
-    _selectedId = userLang.isNotEmpty ? userLang : 'newari';
+    _selectedId = userLang.isNotEmpty ? userLang : 'nepali';
   }
 
   void _handleBack() {
@@ -60,23 +60,6 @@ class _LanguageSelectionScreenState
             .showSnackBar(SnackBar(content: Text(error.toString())));
       }
       return;
-    }
-
-    // FIX 7: Warn the user when they select a language that has no content yet.
-    // The three languages with real lesson content are newari, nepali, english.
-    // Maithili, Tharu, and Limbu are selectable but will show Newari lessons
-    // until Phase 3 adds their content.
-    const supportedLanguages = {'newari', 'nepali', 'english'};
-    if (!supportedLanguages.contains(lang.id) && mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            '${lang.nameEnglish} lessons are coming soon. '
-            "You'll see Newari content until they're ready.",
-          ),
-          duration: const Duration(seconds: 4),
-        ),
-      );
     }
 
     if (!mounted) return;
@@ -305,21 +288,6 @@ class _LanguageCard extends StatelessWidget {
                           : GlossaColors.textSubtle,
                     ),
                   ),
-                  // FIX 7: Coming-soon badge for languages without content yet.
-                  if (!const {'newari', 'nepali', 'english'}.contains(language.id))
-                    Padding(
-                      padding: const EdgeInsets.only(top: 2),
-                      child: Text(
-                        'Coming soon',
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontStyle: FontStyle.italic,
-                          color: isSelected
-                              ? GlossaColors.white.withValues(alpha: 0.55)
-                              : GlossaColors.textSubtle,
-                        ),
-                      ),
-                    ),
                 ],
               ),
             ),

@@ -14,10 +14,6 @@ import '../../features/town/screens/town_loading_screen.dart';
 import '../../features/town/screens/town_screen.dart';
 import '../../features/lessons/screens/battle_loading_screen.dart';
 import '../../features/lessons/screens/lesson_runner_screen.dart';
-import '../../features/lessons/screens/match_words_screen.dart';
-import '../../features/lessons/screens/fill_blank_screen.dart';
-import '../../features/lessons/screens/picture_to_word_screen.dart';
-import '../../features/lessons/screens/word_to_picture_screen.dart';
 import '../../features/progression/screens/level_up_screen.dart';
 import '../../features/leaderboard/screens/leaderboard_screen.dart';
 import '../../features/profile/screens/profile_screen.dart';
@@ -195,38 +191,22 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       parentNavigatorKey: rootNavigatorKey,
       path: AppRoutes.matchWords,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        context: context,
-        state: state,
-        child: const MatchWordsScreen(),
-      ),
+      redirect: (context, state) => AppRoutes.lessonRunner,
     ),
     GoRoute(
       parentNavigatorKey: rootNavigatorKey,
       path: AppRoutes.fillBlank,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        context: context,
-        state: state,
-        child: const FillBlankScreen(),
-      ),
+      redirect: (context, state) => AppRoutes.lessonRunner,
     ),
     GoRoute(
       parentNavigatorKey: rootNavigatorKey,
       path: AppRoutes.pictureToWord,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        context: context,
-        state: state,
-        child: const PictureToWordScreen(),
-      ),
+      redirect: (context, state) => AppRoutes.lessonRunner,
     ),
     GoRoute(
       parentNavigatorKey: rootNavigatorKey,
       path: AppRoutes.wordToPicture,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        context: context,
-        state: state,
-        child: const WordToPictureScreen(),
-      ),
+      redirect: (context, state) => AppRoutes.lessonRunner,
     ),
 
     // ─── Level Up Celebration Screen ──────────────────

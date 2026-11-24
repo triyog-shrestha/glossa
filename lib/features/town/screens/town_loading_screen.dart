@@ -141,7 +141,7 @@ class _TownLoadingScreenState extends State<TownLoadingScreen>
                     ),
                     const SizedBox(height: Spacing.xxl),
                     const XpTipBanner(
-                      tip: 'Say each word out loud. Your voice is the loot.',
+                      tip: 'Complete lessons and keep your daily streak alive to earn bonus XP.',
                     ),
                     const SizedBox(height: Spacing.xxl),
                   ],

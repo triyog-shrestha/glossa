@@ -261,8 +261,6 @@ class BackendApi {
   Future<List<LeaderboardEntry>> leaderboard(String filter) async {
     if (WidgetsBinding.instance.runtimeType.toString().contains('Test')) {
       switch (filter) {
-        case 'family':
-          return mockLeaderboardFamily;
         case 'alltime':
           return mockLeaderboardAllTime;
         case 'weekly':

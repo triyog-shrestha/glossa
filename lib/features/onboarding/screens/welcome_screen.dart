@@ -7,17 +7,9 @@ import 'package:glossa_app/core/constants/spacing.dart';
 import 'package:glossa_app/core/widgets/greek_key_border.dart';
 import 'package:glossa_app/core/widgets/logo_widget.dart';
 import 'package:glossa_app/core/widgets/glossa_button.dart';
-import 'package:glossa_app/core/widgets/audio_waveform.dart';
 
-class WelcomeScreen extends StatefulWidget {
+class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
-
-  @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
-}
-
-class _WelcomeScreenState extends State<WelcomeScreen> {
-  bool _isPlaying = false;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +57,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                     const SizedBox(height: Spacing.xl),
                     Text(
-                      'Hear the\nlanguage of\nhome.',
+                      'Master the\nlanguages of\nNepal.',
                       style: GlossaTypography.displayLargeOnDark.copyWith(
                         fontSize: 36,
                         height: 1.1,
@@ -73,55 +65,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                     const SizedBox(height: Spacing.md),
                     Text(
-                      'Short lessons built on real recordings of\nnative speakers.',
+                      'Explore game-inspired quests, complete exercises, and unlock knowledge.',
                       style: GlossaTypography.bodyMediumOnDark,
-                    ),
-                    const SizedBox(height: Spacing.xxl),
-                    // Audio preview strip
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: Spacing.lg,
-                        vertical: Spacing.md,
-                      ),
-                      decoration: BoxDecoration(
-                        color: GlossaColors.white,
-                        borderRadius: BorderRadius.circular(Spacing.cardRadius),
-                      ),
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () => setState(() => _isPlaying = !_isPlaying),
-                            child: Container(
-                              width: 40,
-                              height: 40,
-                              decoration: const BoxDecoration(
-                                color: GlossaColors.redAction,
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                _isPlaying ? Icons.pause : Icons.play_arrow,
-                                color: GlossaColors.white,
-                                size: 24,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: Spacing.md),
-                          Expanded(
-                            child: AudioWaveform(
-                              isPlaying: _isPlaying,
-                              barColor: GlossaColors.redAction,
-                              height: 28,
-                            ),
-                          ),
-                          const SizedBox(width: Spacing.md),
-                          Text(
-                            'भाय्',
-                            style: GlossaTypography.devanagariMedium.copyWith(
-                              fontSize: 28,
-                            ),
-                          ),
-                        ],
-                      ),
                     ),
                     const SizedBox(height: Spacing.xxl),
                     GlossaButton(

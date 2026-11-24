@@ -494,8 +494,8 @@ def get_leaderboard(
     db: Session = Depends(db_session),
     user: User = Depends(current_user),
 ):
-    if filter not in {"weekly", "family", "alltime"}:
-        raise HTTPException(status_code=422, detail="filter must be weekly, family, or alltime")
+    if filter not in {"weekly", "alltime"}:
+        raise HTTPException(status_code=422, detail="filter must be weekly or alltime")
     if filter == "weekly":
         start = datetime.now(timezone.utc) - timedelta(days=7)
         scores = dict(

@@ -5,7 +5,6 @@ import 'package:glossa_app/app/router/app_router.dart';
 import 'package:glossa_app/app/theme/glossa_colors.dart';
 import 'package:glossa_app/app/theme/glossa_typography.dart';
 import 'package:glossa_app/core/constants/spacing.dart';
-import 'package:glossa_app/core/widgets/glossa_card.dart';
 import 'package:glossa_app/core/widgets/greek_key_border.dart';
 import 'package:glossa_app/core/widgets/hero_avatar.dart';
 import 'package:glossa_app/core/widgets/progress_bar.dart';
@@ -172,124 +171,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: Spacing.lg),
-
-                    // ─── Hero Skills Card ─────────────────────
-                    GlossaCard(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Hero Mastery',
-                            style: GlossaTypography.headlineSmall,
-                          ),
-                          const SizedBox(height: Spacing.md),
-                          _buildSkillRow(
-                            'Hearing',
-                            0.85,
-                            GlossaColors.blueBright,
-                          ),
-                          const SizedBox(height: Spacing.sm),
-                          _buildSkillRow('Voice', 0.60, GlossaColors.redAction),
-                          const SizedBox(height: Spacing.sm),
-                          _buildSkillRow(
-                            'Reading',
-                            0.75,
-                            GlossaColors.successGreen,
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: Spacing.lg),
-
-                    // ─── Share Your Voice (Dark Navy Banner) ──
-                    Container(
-                      padding: const EdgeInsets.all(Spacing.lg),
-                      decoration: BoxDecoration(
-                        color: GlossaColors.blueNavy,
-                        borderRadius: BorderRadius.circular(Spacing.cardRadius),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              const Icon(
-                                Icons.mic_none_rounded,
-                                color: GlossaColors.yellowPrimary,
-                                size: 28,
-                              ),
-                              const SizedBox(width: Spacing.sm),
-                              Text(
-                                'Preserve Your Heritage',
-                                style: GlossaTypography.headlineMedium.copyWith(
-                                  color: GlossaColors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: Spacing.xs),
-                          Text(
-                            'Record words in your native accent to teach fellow heroes and unlock rare badges.',
-                            style: GlossaTypography.bodySmallOnDark,
-                          ),
-                          const SizedBox(height: Spacing.md),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: ElevatedButton.icon(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: GlossaColors.redAction,
-                                    foregroundColor: GlossaColors.white,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                        content: Text(
-                                          'Voice recording will be enabled in the upcoming community update!',
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                  icon: const Icon(Icons.mic, size: 18),
-                                  label: const Text('Record'),
-                                ),
-                              ),
-                              const SizedBox(width: Spacing.sm),
-                              Expanded(
-                                child: OutlinedButton.icon(
-                                  style: OutlinedButton.styleFrom(
-                                    foregroundColor: GlossaColors.white,
-                                    side: const BorderSide(
-                                      color: GlossaColors.yellowPrimary,
-                                      width: 1.5,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                        content: Text(
-                                          'Invite link copied to clipboard (demo)!',
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                  icon: const Icon(Icons.share, size: 18),
-                                  label: const Text('Invite'),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: Spacing.lg),
+                    const SizedBox(height: Spacing.xl),
 
                     // ─── Settings & Navigation Links ──────────
                     Material(
@@ -437,26 +319,6 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildSkillRow(String name, double progress, Color color) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(name, style: GlossaTypography.labelSmall),
-            Text(
-              '${(progress * 100).round()}%',
-              style: GlossaTypography.labelSmall,
-            ),
-          ],
-        ),
-        const SizedBox(height: 4),
-        GlossaProgressBar(progress: progress, fillColor: color, height: 8),
-      ],
     );
   }
 }

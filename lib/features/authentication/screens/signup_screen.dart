@@ -8,7 +8,6 @@ import 'package:glossa_app/core/constants/spacing.dart';
 import 'package:glossa_app/core/widgets/glossa_button.dart';
 import 'package:glossa_app/core/widgets/tab_control.dart';
 import 'package:glossa_app/core/widgets/hero_avatar.dart';
-import 'package:glossa_app/core/widgets/audio_waveform.dart';
 import 'package:glossa_app/shared/providers/game_state_provider.dart';
 
 class SignupScreen extends ConsumerStatefulWidget {
@@ -131,30 +130,9 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                 style: GlossaTypography.headlineMedium,
                               ),
                               const SizedBox(height: 4),
-                              Row(
-                                children: [
-                                  Container(
-                                    width: 28,
-                                    height: 28,
-                                    decoration: const BoxDecoration(
-                                      color: GlossaColors.redAction,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: const Icon(
-                                      Icons.play_arrow,
-                                      color: GlossaColors.white,
-                                      size: 16,
-                                    ),
-                                  ),
-                                  const SizedBox(width: 8),
-                                  const Flexible(
-                                    child: AudioWaveform(
-                                      barColor: GlossaColors.redAction,
-                                      height: 20,
-                                      width: 100,
-                                    ),
-                                  ),
-                                ],
+                              Text(
+                                'Create your adventurer profile to begin learning.',
+                                style: GlossaTypography.bodySmall,
                               ),
                             ],
                           ),

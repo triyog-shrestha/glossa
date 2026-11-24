@@ -917,33 +917,12 @@ class _WordToPictureContentState extends ConsumerState<_WordToPictureContent> {
             color: GlossaColors.blueNavy,
             borderRadius: BorderRadius.circular(Spacing.cardRadius),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                exercise.prompt ?? '?',
-                style: GlossaTypography.devanagariLarge
-                    .copyWith(color: GlossaColors.yellowPrimary),
-              ),
-              const SizedBox(width: Spacing.lg),
-              Container(
-                width: 44,
-                height: 44,
-                decoration: BoxDecoration(
-                  color: GlossaColors.blueDeep,
-                  borderRadius: BorderRadius.circular(22),
-                  border: Border.all(
-                    color: GlossaColors.yellowPrimary,
-                    width: 2,
-                  ),
-                ),
-                child: const Icon(
-                  Icons.volume_up_rounded,
-                  color: GlossaColors.yellowPrimary,
-                  size: 22,
-                ),
-              ),
-            ],
+          child: Center(
+            child: Text(
+              exercise.prompt ?? '?',
+              style: GlossaTypography.devanagariLarge
+                  .copyWith(color: GlossaColors.yellowPrimary),
+            ),
           ),
         ),
         const SizedBox(height: Spacing.xxl),

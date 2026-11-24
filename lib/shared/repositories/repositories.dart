@@ -49,8 +49,6 @@ class MockLeaderboardRepository implements LeaderboardRepository {
   @override
   List<LeaderboardEntry> getEntries(String filter) {
     switch (filter) {
-      case 'family':
-        return mockLeaderboardFamily;
       case 'alltime':
         return mockLeaderboardAllTime;
       default:

@@ -20,7 +20,7 @@ class _LeaderboardScreenState extends ConsumerState<LeaderboardScreen> {
   int _selectedTabIndex = 0;
   late Future<List<LeaderboardEntry>> _entries;
 
-  static const _filters = ['weekly', 'family', 'alltime'];
+  static const _filters = ['weekly', 'alltime'];
 
   @override
   void initState() {
@@ -30,8 +30,6 @@ class _LeaderboardScreenState extends ConsumerState<LeaderboardScreen> {
 
   List<LeaderboardEntry> _mockForFilter(String filter) {
     switch (filter) {
-      case 'family':
-        return mockLeaderboardFamily;
       case 'alltime':
         return mockLeaderboardAllTime;
       case 'weekly':
@@ -134,7 +132,7 @@ class _LeaderboardScreenState extends ConsumerState<LeaderboardScreen> {
   }
 
   Widget _buildFilterTabs() {
-    final tabs = ['This week', 'Family', 'All time'];
+    final tabs = ['This week', 'All time'];
     return Container(
       padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(

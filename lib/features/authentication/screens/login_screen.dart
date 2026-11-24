@@ -7,7 +7,6 @@ import 'package:glossa_app/app/theme/glossa_typography.dart';
 import 'package:glossa_app/core/constants/spacing.dart';
 import 'package:glossa_app/core/widgets/glossa_button.dart';
 import 'package:glossa_app/core/widgets/tab_control.dart';
-import 'package:glossa_app/core/widgets/hero_avatar.dart';
 import 'package:glossa_app/shared/providers/game_state_provider.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -79,7 +78,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   ],
                 ),
                 const SizedBox(height: Spacing.xl),
-                // Welcome back card
+                // Quest Resume Header Card
                 Container(
                   padding: const EdgeInsets.all(Spacing.lg),
                   decoration: BoxDecoration(
@@ -89,38 +88,33 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   ),
                   child: Row(
                     children: [
-                      const HeroAvatar(heroIndex: 0, level: 4, size: 50),
+                      Container(
+                        width: 48,
+                        height: 48,
+                        decoration: BoxDecoration(
+                          color: GlossaColors.yellowPrimary,
+                          shape: BoxShape.circle,
+                          border: Border.all(color: GlossaColors.blueNavy, width: 2),
+                        ),
+                        child: const Icon(
+                          Icons.vpn_key_rounded,
+                          color: GlossaColors.blueNavy,
+                          size: 24,
+                        ),
+                      ),
                       const SizedBox(width: Spacing.md),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Welcome back, Traveler.',
+                              'Resume Quest',
                               style: GlossaTypography.headlineMedium,
                             ),
-                            const SizedBox(height: 6),
-                            Row(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 10,
-                                    vertical: 3,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: GlossaColors.streakGreen,
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Text(
-                                    '5 day streak',
-                                    style: GlossaTypography.labelSmall.copyWith(
-                                      color: GlossaColors.white,
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(width: 8),
-                                Text('Lv 4', style: GlossaTypography.bodySmall),
-                              ],
+                            const SizedBox(height: 4),
+                            Text(
+                              'Sign in to restore your save file and continue your adventure.',
+                              style: GlossaTypography.bodySmall,
                             ),
                           ],
                         ),

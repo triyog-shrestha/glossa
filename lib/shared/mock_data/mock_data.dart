@@ -29,30 +29,26 @@ const List<HeroChoice> heroChoices = [
 // ─── Language choices ───────────────────────────────────────
 const List<LanguageChoice> languageChoices = [
   LanguageChoice(
-    id: 'newari',
-    nameNative: 'नेपाल भाषा',
-    nameEnglish: 'Newari',
-    letterSymbol: 'न',
-    subtitle: 'Starter language',
+    id: 'nepali',
+    nameNative: 'नेपाली',
+    nameEnglish: 'Nepali',
+    letterSymbol: 'ने',
+    subtitle: 'Primary course',
     isStarter: true,
   ),
   LanguageChoice(
-    id: 'maithili',
-    nameNative: 'मैथिली',
-    nameEnglish: 'Maithili',
-    letterSymbol: 'म',
+    id: 'english',
+    nameNative: 'English',
+    nameEnglish: 'English',
+    letterSymbol: 'En',
+    subtitle: 'Learn English',
   ),
   LanguageChoice(
-    id: 'tharu',
-    nameNative: 'थारू',
-    nameEnglish: 'Tharu',
-    letterSymbol: 'थ',
-  ),
-  LanguageChoice(
-    id: 'limbu',
-    nameNative: 'लिम्बु',
-    nameEnglish: 'Limbu',
-    letterSymbol: 'ल',
+    id: 'newari',
+    nameNative: 'नेपाल भाषा',
+    nameEnglish: 'Newari',
+    letterSymbol: 'भा',
+    subtitle: 'Heritage language',
   ),
 ];
 
@@ -240,12 +236,6 @@ List<LeaderboardEntry> get mockLeaderboardWeekly => [
   const LeaderboardEntry(rank: 6, name: 'LeBron', level: 4, className: 'Speaker', xp: 640, heroIndex: 0, isCurrentUser: true),
   const LeaderboardEntry(rank: 7, name: 'Pema', level: 4, className: 'Speaker', xp: 590, heroIndex: 1),
   const LeaderboardEntry(rank: 8, name: 'Karma', level: 2, className: 'Traveler', xp: 410, heroIndex: 0),
-];
-
-List<LeaderboardEntry> get mockLeaderboardFamily => [
-  const LeaderboardEntry(rank: 1, name: 'LeBron', level: 4, className: 'Speaker', xp: 640, heroIndex: 0, isCurrentUser: true),
-  const LeaderboardEntry(rank: 2, name: 'Aji', level: 3, className: 'Speaker', xp: 420, heroIndex: 1),
-  const LeaderboardEntry(rank: 3, name: 'Bua', level: 2, className: 'Traveler', xp: 280, heroIndex: 0),
 ];
 
 List<LeaderboardEntry> get mockLeaderboardAllTime => [

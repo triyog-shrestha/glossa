@@ -168,7 +168,7 @@ class _BattleLoadingScreenState extends ConsumerState<BattleLoadingScreen>
                     ),
                     const SizedBox(height: Spacing.xxl),
                     const XpTipBanner(
-                      tip: 'Missed a word? Replay the voice to weaken the Fog.',
+                      tip: 'Answer exercises accurately and conquer the lesson to earn rewards!',
                     ),
                     const SizedBox(height: Spacing.xxl),
                   ],

@@ -9,7 +9,6 @@ import 'package:glossa_app/core/motion/glossa_motion.dart';
 import 'package:glossa_app/core/motion/motion_widgets.dart';
 import 'package:glossa_app/core/widgets/greek_key_border.dart';
 import 'package:glossa_app/core/widgets/logo_widget.dart';
-import 'package:glossa_app/core/widgets/audio_waveform.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});
@@ -122,17 +121,12 @@ class _LandingScreenState extends State<LandingScreen>
                           ),
                           const SizedBox(height: Spacing.sm),
                           Text(
-                            'Hear it. Say it. Preserve it.',
+                            'Play. Learn. Master.',
                             style: GlossaTypography.bodyLargeOnDark,
-                          ),
-                          const SizedBox(height: Spacing.xl),
-                          const AudioWaveformIcon(
-                            color: GlossaColors.redAction,
-                            size: 32,
                           ),
                           const SizedBox(height: Spacing.xxl),
                           Text(
-                            'NEWARI  ·  MAITHILI  ·  THARU  ·  LIMBU',
+                            'NEPALI  ·  NEWARI',
                             style: GlossaTypography.labelSmall.copyWith(
                               color: GlossaColors.white,
                               letterSpacing: 1.5,

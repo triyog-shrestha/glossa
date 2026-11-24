@@ -51,7 +51,7 @@ class _CourseSwitcherScreenState extends ConsumerState<CourseSwitcherScreen> {
   @override
   Widget build(BuildContext context) {
     final gs = ref.watch(gameStateProvider);
-    final courses = gs.courses;
+    final courses = gs.courses.where((c) => c.isPublished).toList();
     final activeCourseId = gs.user.activeCourseId;
 
     return Scaffold(
@@ -224,30 +224,15 @@ class _CourseCard extends StatelessWidget {
                   ),
                 ),
               )
-            else if (course.isPublished)
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(
-                  color: GlossaColors.successGreen,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  'Available',
-                  style: GlossaTypography.labelSmall.copyWith(
-                    color: GlossaColors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              )
             else
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: GlossaColors.disabledGray,
+                  color: GlossaColors.blueDeep,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  'Coming Soon',
+                  'Switch',
                   style: GlossaTypography.labelSmall.copyWith(
                     color: GlossaColors.white,
                     fontWeight: FontWeight.w700,

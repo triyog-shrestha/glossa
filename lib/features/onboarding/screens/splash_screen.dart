@@ -8,7 +8,6 @@ import 'package:glossa_app/core/constants/spacing.dart';
 import 'package:glossa_app/core/motion/glossa_motion.dart';
 import 'package:glossa_app/core/widgets/greek_key_border.dart';
 import 'package:glossa_app/core/widgets/hero_avatar.dart';
-import 'package:glossa_app/core/widgets/audio_waveform.dart';
 import 'package:glossa_app/shared/providers/game_state_provider.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
@@ -93,19 +92,11 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                     ),
                     const Spacer(flex: 2),
                     Padding(
-                      padding: const EdgeInsets.only(left: Spacing.pagePadding),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: AudioWaveformIcon(color: GlossaColors.redAction, size: 36),
-                      ),
-                    ),
-                    const SizedBox(height: Spacing.lg),
-                    Padding(
                       padding: const EdgeInsets.symmetric(horizontal: Spacing.pagePadding),
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          'Loading your world...',
+                          'Loading your realm...',
                           style: GlossaTypography.displayMediumOnDark,
                         ),
                       ),
@@ -116,7 +107,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          'Summoning native voices. Slow connection?\nHang tight.',
+                          'Preparing your language adventure.',
                           style: GlossaTypography.bodyMediumOnDark,
                         ),
                       ),
